@@ -35,14 +35,13 @@ jobs:
         run: npm run build
 
       - name: Prepare GitHub Pages
-        run: |
-          mkdir -p ./dist
-          touch ./dist/.nojekyll
+  run: |
+    touch ./.output/public/.nojekyll
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
+- name: Upload Pages artifact
+  uses: actions/upload-pages-artifact@v3
+  with:
+    path: ./.output/public
 
   deploy:
     environment:
