@@ -1,7 +1,5 @@
 import { cn } from "@/lib/utils";
-import logoLight from "@/assets/nm-logo-light.png.asset.json";
-import logoDark from "@/assets/nm-logo-dark.png.asset.json";
-
+import logoLight from "@/assets/nm-logo-light.png";
 export function Wordmark({
   tone = "light",
   className,
@@ -9,7 +7,7 @@ export function Wordmark({
   tone?: "light" | "dark";
   className?: string;
 }) {
-  const src = tone === "light" ? logoLight.url : logoDark.url;
+  const src = logoLight;
   return (
     <img
       src={src}
